@@ -194,7 +194,7 @@ Para compartir la imágen de la aplicación usaremos la registry de [DockerHub](
 
 - **3.1)** Comparta la URL de DockerHub para que pueda ser posible probar y descargar su imágen.
 
-    [Inserte la URL de la imágen](https://dockerhub.com/)
+    https://hub.docker.com/r/tuky1990/mi-app-docker
 
 > [!IMPORTANT]
 > Agregue un _overview_ para el repositorio de Dockerhub con instrucciones para correr la imágen y todo lo que considere necesario para que un tercero pueda ejecutar la imágen.
