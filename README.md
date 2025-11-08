@@ -260,19 +260,21 @@ En la aplicación también es posible setear variables de entorno para parametri
 
 - **5.1)** [Crear una red](https://docker.idepba.com.ar/clase4.html#/network_create) para conexión entre los contenedores que servirá también para conectar a la aplicación.
     ```bash
-    # Escriba acá el comando utilizado
+    docker network create mi-red-app
     ```
 - **5.2)** [Crear un nuevo volumen](https://docker.idepba.com.ar/clase5.html#/volume_create) para persistir los datos de la base MySQL. El path donde se almacenan los datos en el contenedor MySQL es `/var/lib/mysql`.
     ```bash
-    # Escriba acá el comando utilizado
+    docker volume create mi-volumen-mysql
     ```
 - **5.3)** Iniciar el _contenedor de base de datos_ utilizando el comando `docker run` y enviando las variables de entorno necesarias.
     ```bash
-    # Escriba acá el comando utilizado
+    docker run -d --name db --network mi-red-app -e MYSQL_ROOT_PASSWORD=admin123 -e MYSQL_DATABASE=todos -v mi-volumen-mysql:/var/lib/mysql mysql:8.0
+
     ```
 - **5.4)** Iniciar el _contenedor de la aplicación_ utilizando el comando `docker run` enviando las variables de entornos necesarias para la conexión con la base de datos.
     ```bash
-    # Escriba acá el comando utilizado
+    docker run -d --name mi-app-mysql --network mi-red-app -p 3000:3000 -e MYSQL_HOST=db -e MYSQL_USER=root -e MYSQL_PASSWORD=admin123 -e MYSQL_DB=todos tuky1990/mi-app-docker:v0.2
+
     ```
 
 > [!TIP]
