@@ -103,15 +103,15 @@ Antes de poder correr la aplicación, necesitamos obtener el código fuente y de
 
 - **1.1)** Ejecute el comando correspondiente para buildear la imagen. Elija un nombre de imagen y un tag acorde. 
     ```bash
-    # Escriba acá el comando utilizado
+   docker build -t mi-app-docker:v0.1 .
     ```
 - **1.2)** ¿Qué espacio ocupa la imagen una vez creada?
     ```bash
-    # Espacio utilizado
+    pesa 282 MB.
     ```
 - **1.3)** ¿Puede hacer algo para optimizar o mejorar la imagen?. Describa qué modificaciones puede hacer para optimizar la imagen.
     ```bash
-    # Describa que podría hacer para mejorar u optimizar la creación de la imágen.
+    Sí se puede mejorar un poco la imagen. se podría usar una versión específica de Alpine en lugar de “latest” para que sea más estable. También se puede agregar un archivo .dockerignore para no   copiar cosas que no hacen falta al contenedor. 
     ```
 
 
