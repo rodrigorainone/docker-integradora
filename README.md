@@ -215,6 +215,8 @@ Los datos en esta APP se guardan en un archivo `/etc/todos/todo.db`.
     ```bash
    docker run -d -p 3000:3000 --name mi-app-persistente -v mi-volumen-datos:/etc/todos tuky1990/mi-app-docker:v0.2
 
+    elijo volumen
+
     ```
 
 
