@@ -169,11 +169,16 @@ La actualización del código recientemente realizada deja obsoleta la antigua v
 
 - **2.2)** Elimine la imágen y el contenedor hecho en el punto anterior: Mostrar comandos utilizados.
     ```bash
-    # Escriba acá el comando utilizado
+   docker ps -a . docker stop mi-app . docker rm mi-app .docker rmi mi-app-docker:v0.1
+
+
+
+
     ```
 - **2.3)** ¿Como puede listar las imágenes para comprobar que se ha eliminado la imagen del punto anterior?
     ```bash
-    # Escriba acá el comando utilizado
+    docker images
+
     ```
 
 
