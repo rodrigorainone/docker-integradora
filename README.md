@@ -213,7 +213,8 @@ Los datos en esta APP se guardan en un archivo `/etc/todos/todo.db`.
 
 - **4.1)** Escriba los comandos necesarios para persistir la base de datos. Decida que tipo de persistencia es la adecuada para su app ([Bind mounts](https://docker.idepba.com.ar/clase5.html#/bind_mounts) o [volumes](https://docker.idepba.com.ar/clase5.html#/volumes))
     ```bash
-    # Escriba el comando necesario
+   docker run -d -p 3000:3000 --name mi-app-persistente -v mi-volumen-datos:/etc/todos tuky1990/mi-app-docker:v0.2
+
     ```
 
 
