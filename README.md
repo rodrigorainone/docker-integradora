@@ -126,18 +126,20 @@ Una vez creada la imágen, debería ser capaz de correr la aplicación.
 
 - **1.4)** Ejecute un comando para poder correr la aplicación.
     ```bash
-    # Escriba acá el comando
+    docker run -d -p 3000:3000 --name mi-app mi-app-docker:v0.1
     ```
 - **1.5)** Explique el comando de la respuesta anterior y cada parámetro enviado.
     ```bash
-    # Escriba la explicación
+    Ese comando crea y ejecuta un contenedor a partir de la imagen mi-app-docker:v0.1. docker run: sirve para crear y correr un contenedor.-d: ejecuta el contenedor en segun plano -p 3000:3000: mapea el puerto 3000 del contenedor al puerto 3000 de la máquina local, así se puede acceder desde el navegador . --name mi-app: asigna el nombre “mi-app” al contenedor para poder identificarlo fácilmente.mi-app-docker:v0.1: es la imagen que se usa para crear el contenedor.
+
     ```
 - **1.6)** ¿Cómo puede saber si el contenedor está corriendo?
     ```bash
-    # Escriba acá el comando
+    docker ps
     ```
 - **1.7)** Adjunte una captura de pantalla con la aplicación funcionando con la URL utilizada para acceder. Reemplace la imágen siguiente por su captura de pantalla.
-    ![](./imgs/broken_img.png)
+    <img width="1912" height="1190" alt="image" src="https://github.com/user-attachments/assets/eab368c5-e132-4b50-9418-034a4916b7b6" />
+
 
 
 ## Parte 2 - Actualizar aplicación
