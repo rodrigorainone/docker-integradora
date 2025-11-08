@@ -1,0 +1,38 @@
+services:
+  mi-app-mysql:
+    image: mysql:8.0
+    container_name: mi-app-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: admin123
+      MYSQL_DATABASE: todos
+    networks:
+      - mi-red-app
+    ports:
+      - "3306:3306"
+    volumes:
+      - mi-volumen-mysql:/var/lib/mysql   # ← volumen persistente
+
+  mi-app:
+    image: tuky1990/mi-app-docker:v0.2
+    container_name: mi-app
+    restart: always
+    depends_on:
+      - mi-app-mysql
+    environment:
+      MYSQL_HOST: mi-app-mysql
+      MYSQL_USER: root
+      MYSQL_PASSWORD: admin123
+      MYSQL_DB: todos
+    networks:
+      - mi-red-app
+    ports:
+      - "3000:3000"
+
+networks:
+  mi-red-app:
+    driver: bridge
+
+volumes:
+  mi-volumen-mysql:   # ← declarar el volumen
+
